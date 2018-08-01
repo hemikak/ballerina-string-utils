@@ -20,3 +20,9 @@ function testTrimChar() {
     value = "A # B # C";
     test:assertEquals(trimWithChar(value, "#"), "A # B # C");
 }
+
+@test:Config {}
+function testParseJson() {
+    string jsonStr = string `{ "name" : "John", "age" : 40 }`;
+    json j = check toJson(jsonStr);
+}

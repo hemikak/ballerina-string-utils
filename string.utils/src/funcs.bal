@@ -15,6 +15,8 @@
 // specific language governing permissions and limitations
 // under the License.
 
+import ballerina/io;
+
 documentation {
     Check if value is nil
     P{{value}} The string value
@@ -68,7 +70,7 @@ public function isNotEmpty(string? value) returns boolean {
 documentation {
     Trims whitespaces of the start and end of a string
     P{{value}} The string value
-    R{{}} trimmed string
+    R{{}} Trimmed string
 }
 public function trim(string value) returns string {
     return value.trim();
@@ -78,7 +80,7 @@ documentation {
     Trims given character of the start and end of a string
     P{{value}} The string value
     P{{char}} Trim character
-    R{{}} trimmed string
+    R{{}} Trimmed string
 }
 public function trimWithChar(string value, string char) returns string {
     string tempValue = value;
@@ -109,4 +111,14 @@ public function trimWithChar(string value, string char) returns string {
     }
 
     return tempValue.substring(0, endIndex);
+}
+
+documentation {
+    Converts a string to a json
+    P{{value}} Json as a string
+    R{{}} Parses Json or error
+}
+public function toJson(string value) returns json | error {
+    io:StringReader tempReader = new(value);
+    return tempReader.readJson();
 }
