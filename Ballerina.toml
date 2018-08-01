@@ -1,6 +1,6 @@
 [project]
 org-name = "hemikak"
-version = "0.0.1"
+version = "0.0.3"
 authors = ["hemika.kodikara@gmail.com"]
 repository = "https://github.com/hemikak/ballerina-string-utils"
 keywords = ["ballerina", "string", "utility", "utils"]
